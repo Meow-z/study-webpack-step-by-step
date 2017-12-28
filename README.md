@@ -1,5 +1,8 @@
 开发过程中如何运行
 
+step 4(tag 0.4):
++ 配置了 loader，见 webpack.config.js
+
 step 3(tag 0.3):
 + 生成 ``` npm run build```
 
