@@ -1,5 +1,9 @@
 开发过程中如何运行
 
+step 5(tag 0.5):
++ 配置了 html-webpack-plugin(https://github.com/jantimon/html-webpack-plugin), 修改入口 html
++ 配置了 clean-webpack-plugin(https://www.npmjs.com/package/clean-webpack-plugin), 构建前清理 /dist
+
 step 4(tag 0.4):
 + 配置了 loader，见 webpack.config.js
 
