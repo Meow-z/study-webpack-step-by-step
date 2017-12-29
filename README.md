@@ -1,7 +1,12 @@
 开发过程中如何运行
 
+step 6(tag 0.6):
++ 配置了 webpack-dev-server
++ 启动 ``` npm run start ```
++ 访问 ``` http://localhost:8080/ ```
+
 step 5(tag 0.5):
-+ 配置了 html-webpack-plugin(https://github.com/jantimon/html-webpack-plugin), 修改入口 html
++ 配置了 html-webpack-plugin(https://github.com/jantimon/html-webpack-plugin), 自动生成入口 html(不需要写了的)
 + 配置了 clean-webpack-plugin(https://www.npmjs.com/package/clean-webpack-plugin), 构建前清理 /dist
 
 step 4(tag 0.4):
