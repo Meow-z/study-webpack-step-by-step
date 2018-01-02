@@ -18,8 +18,16 @@ module.exports = {
     // 所有来自 dist/ 目录的文件都做 gzip 压缩
     compress: true,
     port: 9000,
-    // 热替换
+    // 热替换 http://www.css88.com/doc/webpack/guides/hot-module-replacement/
     hot: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
