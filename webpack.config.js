@@ -1,11 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
     app: './src/index.js',
-    print: './src/print.js'
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -17,13 +17,16 @@ module.exports = {
     // contentBase: [path.join(__dirname, "public"), path.join(__dirname, "assets")]
     // 所有来自 dist/ 目录的文件都做 gzip 压缩
     compress: true,
-    port: 9000
+    port: 9000,
+    // 热替换
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
     title: 'Output Management'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
