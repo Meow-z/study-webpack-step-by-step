@@ -1,9 +1,15 @@
-开发过程中如何运行
+开发过程中如何运行(http://www.css88.com/doc/webpack/)
+
+最开始打开了官方文档的中文版本哒
+对着文档敲了会儿
+但是好像遇到了坑 晾了会儿
+一个月多就忘光了
+嘤嘤嘤～还是找本书重新看吧～
 
 step 6(tag 0.6):
 + 配置了 webpack-dev-server
 + 启动 ``` npm run start ```
-+ 访问 ``` http://localhost:8080/ ```
++ 访问 ``` http://localhost:9000/ ```
 
 step 5(tag 0.5):
 + 配置了 html-webpack-plugin(https://github.com/jantimon/html-webpack-plugin), 自动生成入口 html(不需要写了的)
