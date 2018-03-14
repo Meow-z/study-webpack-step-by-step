@@ -8,4 +8,4 @@ class Button extends Component {
   }
 }
 
-render(<Button/>, window.document.getElementById('app'));
+render(<Button/>, window.document.getElementById('root'));

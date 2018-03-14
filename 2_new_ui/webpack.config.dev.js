@@ -23,13 +23,17 @@ module.exports = {
     inline: true
   },
   module: {
-    loaders: [{
+    // loaders: [{
+    //   test: /\.(js|jsx)$/,
+    //   exclude: /node_modules/,
+    //   loader: 'babel-loader'  // 在 webpack 的 module 部分的 loaders 里进行配置即可
+    // }],
+    // webpack 根据正则表达式，来确定应该查找哪些文件，并将其提供给指定的 loader。
+    rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'  // 在 webpack 的 module 部分的 loaders 里进行配置即可
-    }],
-    // webpack 根据正则表达式，来确定应该查找哪些文件，并将其提供给指定的 loader。
-    rules: [{
+    }, {
         // 在这种情况下，以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader.
         test: /\.css$/,
         use: [
