@@ -26,10 +26,7 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',  // 在 webpack 的 module 部分的 loaders 里进行配置即可
-      query: {
-          presets: ['es2015', 'react']
-      }
+      loader: 'babel-loader'  // 在 webpack 的 module 部分的 loaders 里进行配置即可
     }],
     // webpack 根据正则表达式，来确定应该查找哪些文件，并将其提供给指定的 loader。
     rules: [{
