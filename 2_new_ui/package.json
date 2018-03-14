@@ -1,0 +1,19 @@
+{
+  "name": "new_ui",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf public/bundle.js",
+    "开始": "相当于把 npm 的 start 命令指向 webpack 命令, 多份配置文件的",
+    "start": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js",
+    "build": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "webpack": "3.10.0"
+  }
+}
