@@ -5,12 +5,20 @@ module.exports = {
   // 入口文件 entry: {[entryChunkName: string]: string|Array<string>}
   // babel-polyfill 解决 ie9 和一些低版本的高级浏览器对 es6 新语法并不支持
   entry: {
-    main: ['babel-polyfill', path.resolve(__dirname, "./app/main.js")]
+    main: ['babel-polyfill', path.resolve(__dirname, "./app/main.js")]  // 可配置多个入口
   },
+  // 输出
   output: {
     path: path.resolve(__dirname, "./public/dist"),  // 打包后的文件存放的地方
-    filename: "bundle.js"  // 打包后输出文件的文件名
+    // 打包后输出文件的文件名
+    // 使用 [name] 的占位符，使得可以根据入口有不同的名字
+    // 使用 [id]、[hash] 或者 [hash:8] 的占位符，使得可以根据入口有不同的名字
+    filename: 'bundle.js',
+    // chunkname 未被列在 entry 中, 却又需要被打包出来的文件命名配置
+    // 按需加载中需要使用 todo
+    chunkFilename: "[id]_[name].bundle.js"
   },
+  // 开发过程中的
   devtool: 'inline-source-map',
   devServer: {
     // 告诉服务器在哪儿找文件的
