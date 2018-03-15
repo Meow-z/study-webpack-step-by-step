@@ -1,8 +1,8 @@
 .font {
   background-color: #f0f2f5;
-  color: red;
+  color: green;
 }
 
-#app {
+#root {
   text-align: center;
 }

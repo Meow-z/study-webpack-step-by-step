@@ -9,14 +9,14 @@ module.exports = {
   },
   // 输出
   output: {
-    path: path.resolve(__dirname, "./public/dist"),  // 打包后的文件存放的地方
+    path: path.resolve(__dirname, "./public"),  // 打包后的文件存放的地方
     // 打包后输出文件的文件名
     // 使用 [name] 的占位符，使得可以根据入口有不同的名字
     // 使用 [id]、[hash] 或者 [hash:8] 的占位符，使得可以根据入口有不同的名字
     filename: 'bundle.js',
     // chunkname 未被列在 entry 中, 却又需要被打包出来的文件命名配置
     // 按需加载中需要使用 todo
-    chunkFilename: "[id]_[name].bundle.js"
+    chunkFilename: "[name].[id].bundle.js"
   },
   // 开发过程中的
   devtool: 'inline-source-map',
@@ -39,20 +39,28 @@ module.exports = {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       loader: 'babel-loader'  // 在 webpack 的 module 部分的 loaders 里进行配置即可
-    // }, {
+    }, {
     //   // 用正则去匹配要用该 loader 转换的 CSS 文件
     //   test: /\.css$/,
     //   use: ExtractTextPlugin.extract({
     //     // 转换 .css 文件需要使用的 Loader
     //     use: ['css-loader?minimize'],
     //   }),
-    }, {
-        // 在这种情况下，以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader.
-        test: /\.css$/,
-        use: [
-            'style-loader',  // http://www.css88.com/doc/webpack/loaders/style-loader/
-            'css-loader?minimize'  // minimize 告诉 css-loader 要开启 CSS 压缩。 http://www.css88.com/doc/webpack/loaders/css-loader/
-        ]
+    // }, {
+      // todo 样式表格热更新
+      test: /\.css$/,
+      exclude: /node_modules/,
+      use: [
+        { loader: 'style-loader' },
+        {
+          loader: 'css-loader',  // http://www.css88.com/doc/webpack/loaders/css-loader/
+          options: {
+            modules: true,
+            minimize: true,
+            localIdentName: '[path][name]__[local]--[hash:base64:5]'  // 配置 css 的 className 避免样式冲突
+          }
+        }
+      ]
     }, {
         // 加载图片
         test: /\.(png|svg|jpg|gif)$/,
