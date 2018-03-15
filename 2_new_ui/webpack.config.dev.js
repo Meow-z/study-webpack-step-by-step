@@ -1,5 +1,6 @@
 const path = require('path');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // 入口文件 entry: {[entryChunkName: string]: string|Array<string>}
@@ -13,10 +14,10 @@ module.exports = {
     // 打包后输出文件的文件名
     // 使用 [name] 的占位符，使得可以根据入口有不同的名字
     // 使用 [id]、[hash] 或者 [hash:8] 的占位符，使得可以根据入口有不同的名字
-    filename: 'bundle.js',
+    filename: '[name].[hash].bundle.js',
     // chunkname 未被列在 entry 中, 却又需要被打包出来的文件命名配置
     // 按需加载中需要使用 todo
-    chunkFilename: "[name].[id].bundle.js"
+    chunkFilename: "[name].[hash].bundle.js"
   },
   // 开发过程中的
   devtool: 'inline-source-map',
@@ -86,10 +87,16 @@ module.exports = {
         ]
     }]
   },
-  // plugins: [
-  //   new ExtractTextPlugin({
-  //     // 从 .js 文件中提取出来的 .css 文件的名称
-  //     filename: `[name].css`,
-  //   }),
-  // ]
+  plugins: [
+    // new ExtractTextPlugin({
+    //   // 从 .js 文件中提取出来的 .css 文件的名称
+    //   filename: `[name].css`,
+    // }),
+
+    // 生成 index.html http://www.css88.com/doc/webpack/plugins/html-webpack-plugin/
+    // 更多配置项 https://github.com/jantimon/html-webpack-plugin#configuration
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "./app/index.html")
+    }),
+  ]
 }

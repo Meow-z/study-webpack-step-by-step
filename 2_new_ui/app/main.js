@@ -7,7 +7,7 @@ import style from './style.css';
 
 class Button extends Component {
   render() {
-    console.log('ok');
+    console.log('ok1');
     console.log(style);
     return (<h1 className={style.font}>
             Hello,Webpack~~~~~
