@@ -12,3 +12,4 @@ yarn-error.log*
 lerna-debug.log*
 *.log
 yarn.lock
+package-lock.json

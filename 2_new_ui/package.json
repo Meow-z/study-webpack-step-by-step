@@ -7,7 +7,7 @@
     "clean": "rm -rf public/bundle.js",
     "dev": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js --watch",
     "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js",
-    "build": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.js",
+    "build": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.js --optimize-minimize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,7 +19,7 @@
     "babel-plugin-import": "^1.6.6",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^7.0.0-beta.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

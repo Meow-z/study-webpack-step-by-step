@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 class Button extends Component {
   render() {
-    return <h1>Hello,Webpack</h1>
+    return <h1>Hello,Webpack~~~</h1>
   }
 }
 
