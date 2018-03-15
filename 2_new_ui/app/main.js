@@ -3,10 +3,12 @@ import { Component } from 'react';
 import { render } from 'react-dom';
 import * as style from './style.css';
 
+// style.className === "z849f98ca812"
+
 class Button extends Component {
   render() {
     return (<h1 className={style.font}>
-            Hello,Webpack~~~~
+            Hello,Webpack~~
         </h1>)
   }
 }

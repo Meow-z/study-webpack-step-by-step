@@ -1,10 +1,12 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  // entry:  __dirname + "/app/main.js",  // 唯一入口文件
+  // 入口文件 entry: {[entryChunkName: string]: string|Array<string>}
   // babel-polyfill 解决 ie9 和一些低版本的高级浏览器对 es6 新语法并不支持
-  entry: ['babel-polyfill', path.resolve(__dirname, "./app/main.js")],  // 入口文件
+  entry: {
+    main: ['babel-polyfill', path.resolve(__dirname, "./app/main.js")]
+  },
   output: {
     path: path.resolve(__dirname, "./public/dist"),  // 打包后的文件存放的地方
     filename: "bundle.js"  // 打包后输出文件的文件名
@@ -29,21 +31,21 @@ module.exports = {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       loader: 'babel-loader'  // 在 webpack 的 module 部分的 loaders 里进行配置即可
-    }, {
-      // 用正则去匹配要用该 loader 转换的 CSS 文件
-      test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        // 转换 .css 文件需要使用的 Loader
-        use: ['css-loader'],
-      }),
-    }, {
-    //     // 在这种情况下，以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader.
-    //     test: /\.css$/,
-    //     use: [
-    //         'style-loader',  // http://www.css88.com/doc/webpack/loaders/style-loader/
-    //         'css-loader?minimize'  // minimize 告诉 css-loader 要开启 CSS 压缩。 http://www.css88.com/doc/webpack/loaders/css-loader/
-    //     ]
     // }, {
+    //   // 用正则去匹配要用该 loader 转换的 CSS 文件
+    //   test: /\.css$/,
+    //   use: ExtractTextPlugin.extract({
+    //     // 转换 .css 文件需要使用的 Loader
+    //     use: ['css-loader?minimize'],
+    //   }),
+    }, {
+        // 在这种情况下，以 .css 结尾的全部文件，都将被提供给 style-loader 和 css-loader.
+        test: /\.css$/,
+        use: [
+            'style-loader',  // http://www.css88.com/doc/webpack/loaders/style-loader/
+            'css-loader?minimize'  // minimize 告诉 css-loader 要开启 CSS 压缩。 http://www.css88.com/doc/webpack/loaders/css-loader/
+        ]
+    }, {
         // 加载图片
         test: /\.(png|svg|jpg|gif)$/,
         use: [
@@ -69,10 +71,10 @@ module.exports = {
         ]
     }]
   },
-  plugins: [
-    new ExtractTextPlugin({
-      // 从 .js 文件中提取出来的 .css 文件的名称
-      filename: `[name]_[contenthash:8].css`,
-    }),
-  ]
+  // plugins: [
+  //   new ExtractTextPlugin({
+  //     // 从 .js 文件中提取出来的 .css 文件的名称
+  //     filename: `[name].css`,
+  //   }),
+  // ]
 }

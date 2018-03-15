@@ -1,4 +1,8 @@
-#font {
+.font {
   background-color: #f0f2f5;
   color: red;
+}
+
+#app {
+  text-align: center;
 }
