@@ -96,7 +96,8 @@ module.exports = {
     // 生成 index.html http://www.css88.com/doc/webpack/plugins/html-webpack-plugin/
     // 更多配置项 https://github.com/jantimon/html-webpack-plugin#configuration
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "./app/index.html")
+      template: path.resolve(__dirname, "./app/index.html"),
+      title: "this is a title",
     }),
   ]
 }
