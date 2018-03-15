@@ -47,7 +47,6 @@ module.exports = {
     //     use: ['css-loader?minimize'],
     //   }),
     // }, {
-      // todo 样式表格热更新
       test: /\.css$/,
       exclude: /node_modules/,
       use: [
@@ -57,7 +56,7 @@ module.exports = {
           options: {
             modules: true,
             minimize: true,
-            localIdentName: '[path][name]__[local]--[hash:base64:5]'  // 配置 css 的 className 避免样式冲突
+            localIdentName: '[path][name]__[local]--[hash]'  // 配置 css 的 className 避免样式冲突 但是好像有点问题 hash 不会变化
           }
         }
       ]
