@@ -14,10 +14,10 @@ module.exports = {
     // 打包后输出文件的文件名
     // 使用 [name] 的占位符，使得可以根据入口有不同的名字
     // 使用 [id]、[hash] 或者 [hash:8] 的占位符，使得可以根据入口有不同的名字
-    filename: '[name].[hash].bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
     // chunkname 未被列在 entry 中, 却又需要被打包出来的文件命名配置
     // 按需加载中需要使用 todo
-    chunkFilename: "[name].[hash].bundle.js"
+    chunkFilename: "[name].[chunkhash].bundle.js"
   },
   // 开发过程中的
   devtool: 'inline-source-map',
