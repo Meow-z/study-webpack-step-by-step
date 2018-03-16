@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rm -rf public/*",
     "dev": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js --watch",
-    "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js",
     "devBuild": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js",
+    "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js && npm run devBuild",
     "build": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.js --optimize-minimize",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

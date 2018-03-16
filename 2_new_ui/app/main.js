@@ -10,7 +10,7 @@ class Button extends Component {
     console.log('ok1');
     console.log(style);
     return (<h1 className={style.font}>
-            Hello,Webpack~~~~~
+            Hello,Webpack~~
         </h1>)
   }
 }

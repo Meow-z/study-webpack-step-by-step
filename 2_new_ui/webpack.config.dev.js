@@ -11,6 +11,9 @@ module.exports = {
   // 输出
   output: {
     path: path.resolve(__dirname, "./public"),  // 打包后的文件存放的地方
+    // 加载异步资源需要对应的 URL 地址
+    // 根据实际项目添加
+    // publicPath: '',
     // 打包后输出文件的文件名
     // 使用 [name] 的占位符，使得可以根据入口有不同的名字
     // 使用 [id]、[hash] 或者 [hash:8] 的占位符，使得可以根据入口有不同的名字
@@ -19,7 +22,7 @@ module.exports = {
     // 按需加载中需要使用 todo
     chunkFilename: "[name].[chunkhash].bundle.js"
   },
-  // 开发过程中的
+  // source-map
   devtool: 'inline-source-map',
   devServer: {
     // 告诉服务器在哪儿找文件的
@@ -31,7 +34,7 @@ module.exports = {
     // 所有来自 dist/ 目录的文件都做 gzip 压缩
     compress: true,
     port: 9000,
-    // 热替换 http://www.css88.com/doc/webpack/guides/hot-module-replacement/
+    // 自动刷新网页实现实时预览 http://www.css88.com/doc/webpack/guides/hot-module-replacement/
     inline: true
   },
   module: {
