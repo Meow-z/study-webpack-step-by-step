@@ -3,5 +3,6 @@
   "plugins": [
     "babel-plugin-transform-class-properties",
     "transform-decorators-legacy",
+    ["import", [{ "libraryName": "antd", "libraryDirectory": "es", "style": true }]],
   ],
 }

@@ -1,6 +1,24 @@
 const path = require('path');
+const fs = require('fs');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// ant design theme
+// https://github.com/ant-tool/atool-build/blob/a4b3e3eec4ffc09b0e2352d7f9d279c4c28fdb99/src/getWebpackCommonConfig.js#L131-L138
+const pkgPath = path.join(__dirname, 'package.json');;
+const pkg = fs.existsSync(pkgPath) ? require(pkgPath) : {};
+let theme = {};
+if (pkg.theme && typeof(pkg.theme) === 'string') {
+  let cfgPath = pkg.theme;
+  // relative path
+  if (cfgPath.charAt(0) === '.') {
+    cfgPath = path.resolve(__dirname, cfgPath);
+  }
+  const getThemeConfig = require(cfgPath);
+  theme = getThemeConfig();
+} else if (pkg.theme && typeof(pkg.theme) === 'object') {
+  theme = pkg.theme;
+}
 
 module.exports = {
   // 入口文件 entry: {[entryChunkName: string]: string|Array<string>}
@@ -68,6 +86,16 @@ module.exports = {
           }
         }
       ]
+    }, {
+      test: /\.less$/,
+      use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+      }, {
+          loader: "css-loader" // translates CSS into CommonJS
+      }, {
+          loader: "less-loader", // compiles Less to CSS
+          options: { javascriptEnabled: true, modifyVars: theme}
+      }]
     }, {
         // 加载图片
         test: /\.(png|svg|jpg|gif)$/,
