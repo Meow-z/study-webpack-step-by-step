@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Link, Redirect, Switch } from "react-router-dom";
 import { Button } from 'antd';
+import HelpPage from '../pages/HelpPage';
 import style from './style.css';
 
 // style.className === "z849f98ca812"
@@ -36,10 +37,14 @@ render((
         <li>
           <Link to="/about">About page</Link>
         </li>
+        <li>
+          <Link to="/help">Help page</Link>
+        </li>
       </ul>
       <Switch>
         <Route path="/" exact component={App} />
         <Route path="/about" component={About} />
+        <Route path="/help" component={HelpPage} />
         <Redirect to="/" />
       </Switch>
     </div>

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf public/*",
+    "clean": "rm -rf build/*",
     "dev": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js --watch",
     "devBuild": "npm run clean && ./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js",
     "devServer": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js",

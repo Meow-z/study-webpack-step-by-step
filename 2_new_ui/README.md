@@ -24,3 +24,6 @@ npm run devServer
     |-- Footer 脚注
 |-- layouts/ 页面模板, cli 预留
 |-- utils/ 工具
+
+## 备注 可能会踩的坑
++ 如果新加人家 devServer 需要重启，不然读不到这个文件的
