@@ -134,6 +134,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./public/index.html"),
       title: "this is a title",
+      filename: 'index.html'  // 输出文件的文件名称
     }),
   ]
 }

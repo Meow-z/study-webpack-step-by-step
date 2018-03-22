@@ -26,4 +26,4 @@ npm run devServer
 |-- utils/ 工具
 
 ## 备注 可能会踩的坑
-+ 如果新加人家 devServer 需要重启，不然读不到这个文件的
++ 如果新加文件 devServer 需要重启，不然读不到这个文件的
