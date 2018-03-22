@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Redirect, Switch } from "react-router-dom";
 import { Button } from 'antd';
 import style from './style.css';
 
@@ -37,10 +37,11 @@ render((
           <Link to="/about">About page</Link>
         </li>
       </ul>
-      <main>
+      <Switch>
         <Route path="/" exact component={App} />
         <Route path="/about" component={About} />
-      </main>
+        <Redirect to="/" />
+      </Switch>
     </div>
   </BrowserRouter>
 ), window.document.getElementById('root'))

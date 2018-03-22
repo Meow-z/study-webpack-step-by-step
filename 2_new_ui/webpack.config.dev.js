@@ -28,10 +28,10 @@ module.exports = {
   },
   // 输出
   output: {
-    path: path.resolve(__dirname, "./public"),  // 打包后的文件存放的地方
+    path: path.resolve(__dirname, "./build"),  // 打包后的文件存放的地方
     // 加载异步资源需要对应的 URL 地址
     // 根据实际项目添加
-    // publicPath: '',
+    publicPath: '/',
     // 打包后输出文件的文件名
     // 使用 [name] 的占位符，使得可以根据入口有不同的名字
     // 使用 [id]、[hash] 或者 [hash:8] 的占位符，使得可以根据入口有不同的名字
@@ -46,11 +46,12 @@ module.exports = {
     // 告诉服务器在哪儿找文件的
     // devServer.publicPath 将用于确定应该从哪里提供 bundle，并且此选项优先。
     // 默认情况下，将使用当前工作目录作为提供内容的目录，但是你可以修改为其他目录 devServer.contentBase
-    contentBase: path.resolve(__dirname, "./public"),
+    contentBase: path.resolve(__dirname, "./build"),
     // 也可以从多个目录提供内容
     // contentBase: [path.join(__dirname, "public"), path.join(__dirname, "assets")]
     // 所有来自 dist/ 目录的文件都做 gzip 压缩
     compress: true,
+    historyApiFallback: true,
     port: 9000,
     // 自动刷新网页实现实时预览 http://www.css88.com/doc/webpack/guides/hot-module-replacement/
     inline: true
