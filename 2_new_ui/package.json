@@ -32,7 +32,7 @@
     "webpack-dev-server": "2.9.7"
   },
   "dependencies": {
-    "antd": "^3.3.0",
+    "antd": "^3.3.1",
     "css-loader": "^0.28.10",
     "csv-loader": "^2.1.1",
     "file-loader": "^1.1.11",
