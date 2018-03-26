@@ -24,7 +24,7 @@ module.exports = {
   // 入口文件 entry: {[entryChunkName: string]: string|Array<string>}
   // babel-polyfill 解决 ie9 和一些低版本的高级浏览器对 es6 新语法并不支持
   entry: {
-    main: ['babel-polyfill', path.resolve(__dirname, "./public/main.js")]  // 可配置多个入口
+    main: ['babel-polyfill', path.resolve(__dirname, "./main.js")]  // 可配置多个入口
   },
   // 输出
   output: {
