@@ -52,6 +52,8 @@ module.exports = {
     // 所有来自 dist/ 目录的文件都做 gzip 压缩
     compress: true,
     historyApiFallback: true,
+    host: 'localhost',  // 0.0.0.0
+    disableHostCheck: true,  // 允许自己设置 host
     port: 9000,
     // 自动刷新网页实现实时预览 http://www.css88.com/doc/webpack/guides/hot-module-replacement/
     inline: true
