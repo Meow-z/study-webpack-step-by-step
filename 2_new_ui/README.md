@@ -5,7 +5,9 @@ todo
 ## 如何运行
 todo
 npm install
+启动开发的端口
 npm run devServer
+访问 9000 端口
 
 ## 目录结构规划
 |-- public/ 公共文件目录
