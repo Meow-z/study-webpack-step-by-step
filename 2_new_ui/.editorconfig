@@ -1,0 +1,15 @@
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+[*.{html,css,js,json,yml}]
+indent_size = 2
+
+[*.md]
+indent_style = tab
+indent_size = 4
